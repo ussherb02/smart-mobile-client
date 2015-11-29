@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="smartmobile" uploadOnCheckin="d2c9e2d8-9873-46ae-a93e-77b82eceacba">
+    <serverData>
+      <paths name="smartclient">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/www" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="smartmobile">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/www" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="smartmobile" />
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

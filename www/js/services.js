@@ -1,11 +1,8 @@
 /**
  * Created by kojo on 29/11/15.
  */
-(function (){
-
-  var services = angular.module('smart.services', []);
-
-    services.factory('ReservationService', function($http, $resource) {
-    });
-});
-
+angular.module('smart.services', [])
+  .factory('AuthenticationService', function($http, $resource) {
+  })
+  .factory('ReservationService', function($http, $resource) {
+  });

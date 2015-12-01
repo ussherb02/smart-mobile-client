@@ -1,6 +1,8 @@
 /**
  * Created by kojo on 30/11/15.
  */
+angular.module('smart.constants', []);
+
 (function(){
 
   var constants = angular.module('smart.constants',[]);

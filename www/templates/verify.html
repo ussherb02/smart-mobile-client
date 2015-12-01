@@ -1,3 +1,8 @@
+<ion-view view-title="Device Number Verification">
+  <ion-content>
+  </ion-content>
+</ion-view>
+
 <ion-modal-view>
   <ion-header-bar>
     <h1 class="title">Verify</h1>
@@ -9,15 +14,15 @@
     <form ng-submit="doVerification()">
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Mobile Phone Number</span>
+          <span class="input-label">Number</span>
           <input type="text" ng-model="userData.phoneNumber">
         </label>
 
-        <label class="item item-input">
+        <label class="item item-input" ng-show="requestVerificationCode()">
           <span class="input-label">Verification Code</span>
           <input type="text" ng-model="userData.verificationCode">
-
         </label>
+
         <label class="item">
           <button class="button button-block button-positive" type="submit">Verify</button>
         </label>

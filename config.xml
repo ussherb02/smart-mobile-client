@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.smartmobile407836" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="org.smartgh.smartmobile407836" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>smartmobile</name>
   <description>
-        An Ionic Framework and Cordova project.
+        A Smart mobility project.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="office@smartgh.org" href="http://www.smartgh.org/">
+      Smart Mobility Team
     </author>
   <content src="index.html"/>
   <access origin="*"/>

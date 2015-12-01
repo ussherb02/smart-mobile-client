@@ -1,13 +1,14 @@
 /**
  * Created by kojo on 29/11/15.
  */
-angular.module('stater.controllers', [])
+angular.module('smart.controllers')
 .controller('VerificationCtrl', function($scope, $ionicModal, $timeout, $localstorage) {
     $scope.userData = {};
     $scope.showVerification = false;
+    $scope.showVerificationCode = false;
 
     // Create the verification modal that we will use later
-    $ionicModal.fromTemplateUrl('templates/authentication.html', {
+    $ionicModal.fromTemplateUrl('templates/verify.html', {
       scope: $scope
     }).then(function(modal) {
       $scope.modal = modal;
@@ -44,6 +45,10 @@ angular.module('stater.controllers', [])
 
     $scope.mustVerify = function(){
 
+    }
+
+    $scope.requestVerificationCode = function(){
+      return $scope.showVerificationCode;
     }
 
 });

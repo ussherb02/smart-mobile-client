@@ -64,6 +64,8 @@ angular.module('smart.controllers', [])
   ];
 })
 
+  .controller('HomeCtrl', function($scope, $stateParams) {
+  })
 .controller('ReservationCtrl', function($scope, $stateParams) {
 })
 

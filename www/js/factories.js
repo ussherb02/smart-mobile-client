@@ -1,7 +1,7 @@
 /**
  * Created by kojo on 29/11/15.
  */
-angular.module('smart.controllers', [])
+angular.module('smart.controllers')
 .factory('$localstorage', ['$window', function($window) {
   return {
     set: function(key, value) {

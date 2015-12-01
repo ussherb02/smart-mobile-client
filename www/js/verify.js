@@ -36,7 +36,7 @@ angular.module('smart.controllers')
         $scope.closeVerification();
       }, 1000);
 
-      $scope.toggleVerfication();
+      $scope.toggleVerification();
     };
 
     $scope.toggleVerification = function(){

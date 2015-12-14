@@ -1,0 +1,32 @@
+.no_border {
+  border: 0;
+}
+
+.app_bar {
+  color: $white;
+  @extend .no_border;
+  background: $warning;
+  height: 50px
+}
+
+.app_sub_bar {
+  color: $white;
+  background: lighten($warning,10%);
+}
+
+.bg_white {
+  color: $white !important;
+}
+
+.logo {
+  padding: 10px;
+  height: 50px;
+}
+
+.has_app_bar {
+  top: 50px;
+}
+
+.has_image_header {
+  top: 150px;
+}

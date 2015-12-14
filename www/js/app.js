@@ -9,7 +9,10 @@ angular.module('smart', ['ionic',
   'smart.constants',
   'smart.directives',
   'smart.controllers',
-  'smart.services'
+  'smart.services',
+  'ui.event',
+  'ui.map',
+  'ionic.contrib.drawer'
 ])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

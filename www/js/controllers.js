@@ -1,6 +1,6 @@
 angular.module('smart.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$location) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -51,6 +51,10 @@ angular.module('smart.controllers', [])
       $scope.toggleLogin();
       $scope.loginData = {};
     };
+
+    $scope.go = function(url) {
+      $location.path(url);
+    }
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -78,61 +82,26 @@ angular.module('smart.controllers', [])
   .controller('ReservationCtrl', function($scope, $stateParams) {
   })
 
-.controller('MapCtrl', function($scope, $ionicLoading, $compile) {
-      function initialize() {
-        var myLatlng = new google.maps.LatLng(5.12345, 0.12345);
+  .controller('MapCtrl', ['$scope', function ($scope) {
+    var latLng = new google.maps.LatLng(5.58, -0.22345);
+    $scope.mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
 
-        var mapOptions = {
-          center: myLatlng,
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map"),
-          mapOptions);
+    /*$scope.addMarker = function($event, $params) {
+      var latLng = new google.maps.LatLng(5.58, -0.22345);
 
-        //Marker + infowindow + angularjs compiled ng-click
-        var contentString = "<div><a ng-click='clickTest()'>Click me!</a></div>";
-        var compiled = $compile(contentString)($scope);
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: latLng
+      });
 
-        var infowindow = new google.maps.InfoWindow({
-          content: compiled[0]
-        });
-
-        var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'Uluru (Ayers Rock)'
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.open(map,marker);
-        });
-
-        $scope.map = map;
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-
-      $scope.centerOnMe = function() {
-        if(!$scope.map) {
-          return;
-        }
-
-        $scope.loading = $ionicLoading.show({
-          content: 'Getting current location...',
-          showBackdrop: false
-        });
-
-        navigator.geolocation.getCurrentPosition(function(pos) {
-          $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-          $scope.loading.hide();
-        }, function(error) {
-          alert('Unable to get location: ' + error.message);
-        });
-      };
-
-      $scope.clickTest = function() {
-        alert('Example of infowindow with ng-click')
-      };
-
-
-});
+      new google.maps.Marker({
+        position: latLng,
+        map: map,
+        title: 'Hello World!'
+      });
+    }*/
+  }]);

@@ -1,46 +1,61 @@
 <ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable bar-dark">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-
+  <!-- Center content -->
+    <ion-nav-bar class="app_bar has-tabs-top bar_height">
+      <!-- toggle button | add animate="true" to make it look different-->
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
+        <button class="button button-icon icon ion-navicon bg_white" drawer-toggle ></button>
+      </ion-nav-buttons>
+
+      <!-- app image -->
+      <ion-nav-title>
+        <img alt="Logo" class="logo" src="img/logoSt2r.png">
+      </ion-nav-title>
+
+      <!-- search button -->
+      <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-search bg_white" ng-click="go('/app/search')"></button>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view name="menuContent">
-    </ion-nav-view>
-  </ion-side-menu-content>
 
-  <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable bar-dark">
-    Profile
-    </ion-header-bar>
-    <ion-content>
-      <ion-list>
-        <ion-item menu-close href="#/app/search">
-          Search
-        </ion-item>
-        <ion-item menu-close href="#/app/reservation">
-          Reservation
-        </ion-item>
-        <ion-item menu-close href="#/app/verify">
-          Verify
-        </ion-item>
-        <ion-item menu-close href="#/app/customize">
-          Customize
-        </ion-item>
-        <ion-item menu-close ng-click="login()" ng-show="showLogin == true" >
-          Login
-        </ion-item>
-        <ion-item menu-close ng-click="logout()" ng-show="showLogin == false" >
-          Logout
-        </ion-item>
-        <ion-item menu-close href="#/app/about">
-          About
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
+    <ion-side-menu-content>
+      <ion-nav-view class="has_app_bar" name="menuContent">
+      </ion-nav-view>
+    </ion-side-menu-content>
+
+  <!-- Left menu -->
+  <drawer side="left">
+    <ion-view>
+      <ion-content class="no-header">
+        <div class="image_background profile_image">
+          <div class="circular"><a class="item item-image" href="#">
+            <img alt="Logo" src="img/ionic.png">
+          </a></div>
+          <!--<img alt="Logo" src="img/user.jpg">-->
+        </div>
+        <ion-list class="list-borderless">
+          <ion-item drawer-close href="#/app/reservation" class="item item-icon-left">
+            <i class="icon ion-calendar"></i> Reservation
+          </ion-item>
+          <ion-item drawer-close href="#/app/verify" class="item item-icon-left">
+            <i class="icon ion-checkmark-circled"></i>Verify
+          </ion-item>
+          <ion-item drawer-close href="#/app/customize" class="item item-icon-left">
+            <i class="icon ion-settings"></i>Customize
+          </ion-item>
+          <ion-item drawer-close href="#/app/map" class="item item-icon-left">
+            <i class="icon ion-map"></i> Map
+          </ion-item>
+          <ion-item drawer-close href="#/app/about" class="item item-icon-left">
+            <i class="icon ion-information-circled"></i> About
+          </ion-item>
+          <ion-item class="button button-stable button-full item item-icon-left" drawer-close ng-click="login()" ng-show="showLogin == true" >
+            <i class="icon ion-log-in"></i> Login
+          </ion-item>
+          <ion-item class="button button-stable button-full item item-icon-left" drawer-close ng-click="logout()" ng-show="showLogin == false" >
+            <i class="icon ion-log-out"></i> Logout
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-view>
+  </drawer>
 </ion-side-menus>
